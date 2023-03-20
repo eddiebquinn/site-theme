@@ -1,4 +1,17 @@
 <head>
+  <!-- ADDED BY ME : START -->
+  {{ with .Params.opengraph_image }}
+  <meta property="og:image" content="{{ (printf "%s%s" ($.Site.BaseURL) (. | relURL)) }}">
+  {{ else }}
+  <meta property="og:image" content="{{ (printf "%s%s" ($.Site.BaseURL) "images/opengraph.png") }}">
+  {{ end }}
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:description" content="{{ .Description }}">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <!-- ADDED BY ME : END -->
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
